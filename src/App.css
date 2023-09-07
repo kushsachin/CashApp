@@ -1,0 +1,353 @@
+@font-face {
+  font-family: "Agrandir";
+  src: url(../src/assets/fonts/Agrandir/AgrandirGrandHeavy800.otf);
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url(../src/assets/fonts/Mulish/Mulish-VariableFont_wght.ttf);
+}
+
+.ul-style {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.bg-dark{
+  background-color: black;
+}
+
+.text-m-x-y-0{
+  margin: 0;
+}
+
+.text-font-family-Agrandir{
+  font-family: Agrandir;
+}
+
+.text-font-family-Mulish{
+  font-family: Mulish;
+}
+
+.text--font-sz-10 {
+  font-size: 10px;
+}
+
+.text--font-sz-12 {
+  font-size: 12px;
+}
+
+.text--font-sz-16 {
+  font-size: 16px;
+}
+
+.text--font-sz-22 {
+  font-size: 22px;
+}
+
+.text--font-sz-40 {
+  font-size: 40px;
+}
+
+.text--font-sz-193 {
+  font-size: 193px;
+}
+
+.text--c-white {
+  color: #ffffff;
+}
+
+.text--c-green {
+  color: #00D54B;
+}
+
+#menuToggle {
+  position: absolute;
+  top: 34px;
+  right: 34px;
+  z-index: 5;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: pointer;
+}
+ 
+#menuToggle a{
+  text-decoration: none;
+}
+ 
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  cursor: pointer;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  border-radius: 3px;
+  z-index: 1000000;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+ 
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+ 
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: white;
+}
+ 
+#menuToggle input:checked ~ span:nth-last-child(3){
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+   transform: rotate(-45deg) translate(0, -1px);
+}
+ 
+
+#menu {
+  position: absolute;
+  width: calc(100vw - 100px);
+  margin: -100px 0 0 -50px;
+  left: 120px;
+  padding: 50px;
+  padding-top: 125px;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* -webkit-font-smoothing: antialiased; */
+  transform-origin: 0% 0%;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.menu_list{
+  width: 250px;
+}
+
+#menu li {
+  padding: 5px 0;
+}
+
+#menuToggle input:checked ~ div {
+   transform: none;
+   transform: translate(-100%, 0);
+   /* visibility: visible; */
+   /* display: block; */
+}
+
+/* Hero Styles */
+.Hero{
+  background-color: black;
+  width: 100%;
+  background-image: url("../src/assets/svgs/herobackground.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: relative;
+  overflow: hidden;
+}
+
+.Hero_container{
+  width: calc(100% - 120px);
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 18px 60px;
+  position: relative;
+}
+
+.Hero_nav{
+ display: flex;  
+ align-items: center; 
+ justify-content: space-between;
+}
+
+.Hero_nav-list{
+  display: flex;
+  gap: 20px;
+}
+
+.Hero_nav-list li a{
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.Hero_content{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 90px 0 15px;
+}
+
+.Hero_content h2{
+  text-align: center;
+  font-weight: 800;
+  line-height: 166px; /* 86.01% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.Hero_content h2:nth-child(1) {
+  padding-top: 73.21px !important;
+  z-index: 1;
+}
+
+.Hero_content h2:nth-child(2) {
+  padding-bottom: 73.21px !important;
+  z-index: 3;
+}
+
+.Hero_content svg{
+  position: absolute;
+  top: 0;
+  left: calc(50% - 185px);
+  z-index: 2;
+}
+
+.Hero_footer{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.Hero_footer-buttons{
+  display: flex;
+  gap: 20px;
+}
+
+.Hero_footer-buttons button{
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  border: 1px solid #FFF;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+.Hero_footer-content {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  max-width: calc(50% - 36px);
+}
+
+.Hero_footer-content p{
+  max-width: 363px;
+}
+.Hero_footer-content ul{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.NavigateToPayment{
+  position: absolute;
+  left: calc(50% - 9px);
+  bottom: 17px;
+}
+
+.Hero_container-intro-cube{
+  position: absolute;
+  top: 50px;
+  left: 20%;
+}
+.Hero_container-intro-cubes{
+  position: absolute;
+  bottom: 72px;
+  left: calc(20% - 120px);
+  z-index: 0;
+}
+.Hero_container-into-stairs{
+  position: absolute;
+  top: 50px;
+  right: calc(10%);
+  z-index: 0;
+}
+
+.Hero_container-into-pillars{
+  position: absolute;
+  bottom: 30px;
+  right: calc(19.5%);
+  z-index: 0;
+}
+
+.Payments_bg{
+  position: relative;
+  width: 100%;
+  background-color: #F8F6F6;
+  background-image: url("../src/assets/svgs/payments/paymentLine.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom 25px; 
+  z-index: -1;
+}
+
+.Payments{
+  width: 100%;
+  background-image: url("../src/assets/svgs/paymentBackground.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom; 
+  z-index: 2;
+}
+
+.Payments_container{
+  width: calc(100% - 120px);
+  height: 100%;
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 800px 60px 18px;
+  position: relative;
+}
+
+.Payment_main{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  position: absolute;
+  z-index: -1;
+  right: calc(50% - 375px);
+  top: 40px;
+  padding-top: 116px;
+}
+
+.Payment_main-content{
+  min-width: 353px;
+  position: absolute;
+  /* top: 0; */
+  right: calc(50% - -112px);
+  z-index: 10;
+}
+
+/* .Payment_main svg{
+  position: absolute;
+  top: 0;
+} */
