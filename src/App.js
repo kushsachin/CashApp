@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="App">
       <CashAppHero/>
+      <h1>sss</h1>
       <Payments/>
       <Banking/>
       <CashCard/>
