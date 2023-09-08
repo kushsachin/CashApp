@@ -1,3 +1,4 @@
+import React from 'react'
 import './App.css';
 import Banking from './Components/Banking';
 import CashAppHero from './Components/CashAppHero';
@@ -9,7 +10,6 @@ function App() {
   return (
     <div className="App">
       <CashAppHero/>
-      <h1>sss</h1>
       <Payments/>
       <Banking/>
       <CashCard/>

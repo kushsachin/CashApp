@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ReactComponent as CashAppLogo } from '../assets/svgs/cashAppLogo.svg';
 import { ReactComponent as EyeButton } from '../assets/svgs/eyeButton.svg';
 import { ReactComponent as IntroPhone } from '../assets/svgs/introPhone.svg';
@@ -10,10 +10,19 @@ import { ReactComponent as Insta } from '../assets/svgs/instagram.svg';
 import { ReactComponent as ArrowDown } from '../assets/svgs/arrowDown.svg';
 
 export default function CashAppHero() {
-    const [checked, setChecked] = useState(false)
+    const [checked, setChecked] = useState(false);
+    useEffect(() => {
+        if(checked){
+            document.body.style.overflow = "hidden";
+            // return () => (document.body.style.overflow = "scroll");
+        }else{
+            document.body.style.overflow = "scroll";
+            // return () => (document.body.style.overflow = "scroll");
+        }
+    },[checked]);
   return (
     <div className='Hero'>
-        <div id="menuToggle" onClick={() => setChecked(!checked)}>
+        <div className="Hero_menuToggle" onClick={() => setChecked(!checked)}>
             <input type="checkbox" checked={checked} />
             <span></span>
             <span></span>
@@ -34,12 +43,12 @@ export default function CashAppHero() {
         </div>
         <div className='Hero_container'>
             <header className='Hero_header'>
+                <h1 className="header__logo-h1 text-m-x-y-0">
+                    <a href="/">
+                        <CashAppLogo/>
+                    </a>
+                </h1>
                 <nav className='Hero_nav'>
-                    <h1 className="header__logo-h1 text-m-x-y-0">
-                        <a href="/">
-                            <CashAppLogo/>
-                        </a>
-                    </h1>
                     <ul className='Hero_nav-list text-font-family-Agrandir ul-style text--c-white text--font-sz-12'>
                         <li><a href="/Signin" className='text--c-white'>Sign In</a></li>
                         <li><a href="/Legal" className='text--c-white'>Legal</a></li>
@@ -59,8 +68,8 @@ export default function CashAppHero() {
                 </nav>
             </header>
             <section className='Hero_content text-font-family-Agrandir text--c-white'>
-                <h2 className='head1 text-m-x-y-0 text--font-sz-193'>Cash</h2>
-                <h2 className='head2 text-m-x-y-0 text--font-sz-193'>App</h2>
+                <h2 className='head1 text-m-x-y-0'>Cash</h2>
+                <h2 className='head2 text-m-x-y-0'>App</h2>
                 <IntroPhone/>
             </section>
             <section className='Hero_footer'>

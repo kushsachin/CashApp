@@ -62,7 +62,7 @@
   color: #00D54B;
 }
 
-#menuToggle {
+.Hero_menuToggle {
   position: absolute;
   top: 34px;
   right: 34px;
@@ -70,13 +70,14 @@
   -webkit-user-select: none;
   user-select: none;
   cursor: pointer;
+  display: none;
 }
  
-#menuToggle a{
+.Hero_menuToggle a{
   text-decoration: none;
 }
  
-#menuToggle input {
+.Hero_menuToggle input {
   display: block;
   width: 40px;
   height: 32px;
@@ -89,7 +90,7 @@
   -webkit-touch-callout: none;
 }
 
-#menuToggle span {
+.Hero_menuToggle span {
   display: block;
   width: 33px;
   height: 4px;
@@ -104,26 +105,26 @@
               opacity 0.55s ease;
  }
  
- #menuToggle span:first-child {
+ .Hero_menuToggle span:first-child {
   transform-origin: 0% 0%;
 }
  
-#menuToggle span:nth-last-child(2) {
+.Hero_menuToggle span:nth-last-child(2) {
   transform-origin: 0% 100%;
 }
  
-#menuToggle input:checked ~ span {
+.Hero_menuToggle input:checked ~ span {
   opacity: 1;
   transform: rotate(45deg) translate(-2px, -1px);
   background: white;
 }
  
-#menuToggle input:checked ~ span:nth-last-child(3){
+.Hero_menuToggle input:checked ~ span:nth-last-child(3){
   opacity: 0;
   transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked ~ span:nth-last-child(2) {
+.Hero_menuToggle input:checked ~ span:nth-last-child(2) {
    transform: rotate(-45deg) translate(0, -1px);
 }
  
@@ -153,11 +154,18 @@
   padding: 5px 0;
 }
 
-#menuToggle input:checked ~ div {
+.Hero_menuToggle input:checked ~ div {
    transform: none;
    transform: translate(-100%, 0);
    /* visibility: visible; */
    /* display: block; */
+}
+
+/* Responsive Toggle menu */
+@media screen and (max-width: 1024px) {
+  .Hero_menuToggle {
+    display: block;
+  }
 }
 
 /* Hero Styles */
@@ -166,7 +174,7 @@
   width: 100%;
   background-image: url("../src/assets/svgs/herobackground.svg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center bottom;
   position: relative;
   overflow: hidden;
 }
@@ -179,10 +187,28 @@
   position: relative;
 }
 
+.Hero_header{
+  position: relative;
+  left: 0;
+}
+
+
+.header__logo-h1{
+  position: absolute;
+  top: 0;
+}
+
 .Hero_nav{
  display: flex;  
  align-items: center; 
- justify-content: space-between;
+ justify-content: center;
+ position: relative;
+ height: 44px;
+}
+
+.Hero_nav h1{
+  position: absolute;
+  right: 0;
 }
 
 .Hero_nav-list{
@@ -207,9 +233,10 @@
 .Hero_content h2{
   text-align: center;
   font-weight: 800;
-  line-height: 166px; /* 86.01% */
+  line-height: 166px; 
   letter-spacing: 0.5px;
   text-transform: uppercase;
+  font-size: 193px;
 }
 
 .Hero_content h2:nth-child(1) {
@@ -227,11 +254,13 @@
   top: 0;
   left: calc(50% - 185px);
   z-index: 2;
+  width: 370px;
 }
 
 .Hero_footer{
   display: flex;
   align-items: center;
+  flex-direction: row;
   justify-content: space-between;
   position: relative;
   z-index: 1;
@@ -272,32 +301,86 @@
   position: absolute;
   left: calc(50% - 9px);
   bottom: 17px;
+  display: block;
 }
 
-.Hero_container-intro-cube{
-  position: absolute;
-  top: 50px;
-  left: 20%;
+/* Responsive Hero section */
+@media screen and (max-width: 1024px) {
+  .Hero_nav{
+    display: none;
+  }
+  .Hero_content h2{
+    font-size: 93px;
+    line-height: 80px; 
+  }
+  .Hero_content svg{
+    width: 195px;
+    height: auto;
+    left: calc(50% - 97.5px);
+    top: 0;
+  }
+  .Hero_content h2:nth-child(1) {
+    padding-top: 45px !important;
+  }
+  
+  .Hero_content h2:nth-child(2) {
+    padding-bottom: 45px !important;
+  }
+
+  .NavigateToPayment{
+    display: none;
+  }
+
+  .Hero_footer{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .Hero_footer-buttons{
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Hero_footer-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+  }
 }
-.Hero_container-intro-cubes{
-  position: absolute;
-  bottom: 72px;
-  left: calc(20% - 120px);
-  z-index: 0;
-}
-.Hero_container-into-stairs{
-  position: absolute;
-  top: 50px;
-  right: calc(10%);
-  z-index: 0;
+@media screen and (max-width: 600px) {
+
+  .Hero_container{
+    width: calc(100% - 60px);
+    padding: 18px 30px;
+  }
+
+  .Hero_content h2{
+    font-size: 56px;
+    line-height: 50px;
+  }
+
+  .Hero_content svg{
+    width: 120px;
+    height: auto;
+    left: calc(50% - 60px);
+  }
+
+  .Hero_content h2:nth-child(1) {
+    padding-top: 25px !important;
+  }
+  
+  .Hero_content h2:nth-child(2) {
+    padding-bottom: 25px !important;
+  }
+  .Hero_footer-content {
+   
+    flex-direction: column;
+  }
 }
 
-.Hero_container-into-pillars{
-  position: absolute;
-  bottom: 30px;
-  right: calc(19.5%);
-  z-index: 0;
-}
 
 .Payments_bg{
   position: relative;
@@ -337,12 +420,12 @@
   right: calc(50% - 375px);
   top: 40px;
   padding-top: 116px;
+  overflow-x: hidden;
 }
 
 .Payment_main-content{
   min-width: 353px;
   position: absolute;
-  /* top: 0; */
   right: calc(50% - -112px);
   z-index: 10;
 }

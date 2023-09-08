@@ -10,7 +10,7 @@ export default function Payments() {
                             <h2 className='text-font-family-Agrandir text--c-green text-m-x-y-0 text--font-sz-40'>Payments</h2>
                             <p className='text-font-family-Mulish text--c-black text-m-x-y-0 text--font-sz-16'>Send and receive money with anyone, donate to an important cause, or tip professionals. Just enter a $cashtag, phone number, or scan their QR code to pay.</p>
                         </div>
-                        <img src={PaymentsPhone} alt='PaymentsPhone'/>
+                        {/* <img src={PaymentsPhone} alt='PaymentsPhone'/> */}
                     </div>
                 </div>
             </div>
