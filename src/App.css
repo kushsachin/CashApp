@@ -1,35 +1,38 @@
+/* Font Families */
 @font-face {
   font-family: "Agrandir";
   src: url(../src/assets/fonts/Agrandir/AgrandirGrandHeavy800.otf);
 }
-
 @font-face {
   font-family: "Mulish";
   src: url(../src/assets/fonts/Mulish/Mulish-VariableFont_wght.ttf);
 }
 
-.ul-style {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.bg-dark{
-  background-color: black;
-}
-
-.text-m-x-y-0{
-  margin: 0;
-}
-
+/* Font Family Classes */
 .text-font-family-Agrandir{
   font-family: Agrandir;
 }
-
 .text-font-family-Mulish{
   font-family: Mulish;
 }
 
+/* Background colors */
+.bg-dark{
+  background-color: black;
+}
+.bg-light{
+  background-color: white;
+}
+
+/* Buttons border */
+.button-border-white{
+  border: 1px solid #FFF;
+}
+.button-border-black{
+  border: 1px solid #000;
+}
+
+/* font sizes */
 .text--font-sz-10 {
   font-size: 10px;
 }
@@ -54,6 +57,7 @@
   font-size: 193px;
 }
 
+/* Text colors */
 .text--c-white {
   color: #ffffff;
 }
@@ -62,6 +66,7 @@
   color: #00D54B;
 }
 
+/* Toggles menu CSS */
 .Hero_menuToggle {
   position: absolute;
   top: 34px;
@@ -85,8 +90,8 @@
   top: -7px;
   left: -5px;
   cursor: pointer;
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
+  opacity: 0; 
+  z-index: 2; 
   -webkit-touch-callout: none;
 }
 
@@ -137,7 +142,7 @@
   padding: 50px;
   padding-top: 125px;
   background-color: rgba(0, 0, 0, 0.8);
-  /* -webkit-font-smoothing: antialiased; */
+  -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
   display: flex;
@@ -157,8 +162,6 @@
 .Hero_menuToggle input:checked ~ div {
    transform: none;
    transform: translate(-100%, 0);
-   /* visibility: visible; */
-   /* display: block; */
 }
 
 /* Responsive Toggle menu */
@@ -168,7 +171,7 @@
   }
 }
 
-/* Hero Styles */
+/* Hero section Styles */
 .Hero{
   background-color: black;
   width: 100%;
@@ -177,12 +180,13 @@
   background-position: center bottom;
   position: relative;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
 }
 
 .Hero_container{
   width: calc(100% - 120px);
   max-width: 1366px;
-  margin: 0 auto;
   padding: 18px 60px;
   position: relative;
 }
@@ -257,46 +261,6 @@
   width: 370px;
 }
 
-.Hero_footer{
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-between;
-  position: relative;
-  z-index: 1;
-}
-
-.Hero_footer-buttons{
-  display: flex;
-  gap: 20px;
-}
-
-.Hero_footer-buttons button{
-  padding: 12px;
-  display: flex;
-  align-items: center;
-  border-radius: 7px;
-  border: 1px solid #FFF;
-  gap: 5px;
-  text-transform: uppercase;
-}
-
-.Hero_footer-content {
-  display: flex;
-  align-items: center;
-  gap: 35px;
-  max-width: calc(50% - 36px);
-}
-
-.Hero_footer-content p{
-  max-width: 363px;
-}
-.Hero_footer-content ul{
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
 .NavigateToPayment{
   position: absolute;
   left: calc(50% - 9px);
@@ -304,7 +268,7 @@
   display: block;
 }
 
-/* Responsive Hero section */
+/* Tab Responsive Hero section 1024*/
 @media screen and (max-width: 1024px) {
   .Hero_nav{
     display: none;
@@ -330,28 +294,10 @@
   .NavigateToPayment{
     display: none;
   }
-
-  .Hero_footer{
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .Hero_footer-buttons{
-    width: 100%;
-    justify-content: center;
-  }
-
-  .Hero_footer-content {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    min-width: 100%;
-    justify-content: space-between;
-  }
 }
-@media screen and (max-width: 600px) {
 
+/* Mobile Responsive Hero section 600px */
+@media screen and (max-width: 600px) {
   .Hero_container{
     width: calc(100% - 60px);
     padding: 18px 30px;
@@ -375,62 +321,435 @@
   .Hero_content h2:nth-child(2) {
     padding-bottom: 25px !important;
   }
-  .Hero_footer-content {
-   
-    flex-direction: column;
-  }
 }
 
-
-.Payments_bg{
-  position: relative;
-  width: 100%;
-  background-color: #F8F6F6;
-  background-image: url("../src/assets/svgs/payments/paymentLine.svg");
-  background-repeat: no-repeat;
-  background-position: center bottom 25px; 
-  z-index: -1;
-}
-
+/* Payments Section CSS */
 .Payments{
+  position: relative;
   width: 100%;
   background-image: url("../src/assets/svgs/paymentBackground.svg");
   background-repeat: no-repeat;
   background-position: center bottom; 
-  z-index: 2;
+  background-color: #F8F6F6;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
 }
 
 .Payments_container{
   width: calc(100% - 120px);
-  height: 100%;
   max-width: 1366px;
-  margin: 0 auto;
-  padding: 800px 60px 18px;
+  padding: 18px 60px;
   position: relative;
+  height: calc(750px - 36px);
 }
 
-.Payment_main{
-  margin: 0 auto;
+.Payments_container-content{
+  max-width: 352px;
+  width: 100%;
+  position: absolute;
+  right: calc(50% + 120px);
+  top: 228px;
+  z-index: 1;
+}
+
+.Payments_container-content h2{
+  font-size: 40px;
+}
+
+/* Tab Responsive Payment section 1024px*/
+@media screen and (max-width: 1024px) {
+  .Payments_container{
+    padding: 201px 30px 18px;
+    width: calc(100% - 60px);
+  }
+  
+  .Payments_container-content{
+    right: calc(50%);
+    top: 50px;
+    transform: translate(50%, 50%);
+    text-align: center;
+    width: calc(100% - 40px);
+  }
+  .Payments_container-content h2{
+    font-size: 32px;
+  }
+}
+
+/* Mobile Responsive Payment Section */
+@media screen and (max-width: 600px) {
+  .Payments{
+    background-size: 1150px auto;
+  }
+  .Payments_container{
+    padding: 130px 18px 18px;
+    height: calc(480px - 36px);
+  }
+  .Payments_container-content{
+    right: 50%;
+    transform: translate(50%, 25%);
+  }
+  .Payments_container-content h2{
+    font-size: 24px;
+  }
+  .Payments_container-content p{
+    font-size: 12px;
+  }
+}
+
+/* Banking section CSS */
+.Banking{
+  position: relative;
+  width: 100%;
+  background-image: url("../src/assets/svgs/banking/bankingBackground.svg");
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-color: #00D54B;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+}
+
+.Banking_container{
+  width: calc(100% - 120px);
+  max-width: 1366px;
+  padding: 18px 60px;
+  position: relative;
+  height: calc(750px - 36px);
+}
+
+.Banking_container-content{
+  max-width: 336px;
+  padding: 16px;
+  width: calc(100% - 32px);
+  position: absolute;
+  right: calc(50%);
+  transform: translate(-10%, -55%);
+  top: 50%;
+  z-index: 1;
+}
+
+.Banking_container-content h2{
+  font-size: 40px;
+}
+
+/* Tab Responsive Banking section 1024px */
+@media screen and (max-width: 1024px) {
+  .Banking{
+    background-image: url("../src/assets/svgs/banking/bankingBackground.svg");
+    background-repeat: no-repeat;
+    background-size: auto 600px;
+    background-position: center bottom; 
+  }
+  .Banking_container{
+    padding: 16px;
+    width: calc(100% - 32px);
+  }
+  .Banking_container-content{
+    right: calc(50%);
+    top: 40px;
+    transform: translate(50%, 0);
+    text-align: center;
+  }
+  .Banking_container-content h2{
+    font-size: 32px;
+  }
+}
+
+/* Mobile responsive banking section 600px */
+@media screen and (max-width: 600px) {
+  .Banking{
+    background-image: url("../src/assets/svgs/banking/bankingBackground.svg");
+    background-repeat: no-repeat;
+    background-size: auto 580px;
+    background-position: center bottom; 
+  }
+  .Banking_container-content h2{
+    font-size: 24px;
+  }
+  .Banking_container-content p{
+    font-size: 16px;
+  }
+}
+
+
+/* CashCard section CSS */
+.CashCard{
+  position: relative;
+  width: 100%;
+  background-image: url("../src/assets/svgs/CashCard/CashCardBG.svg");
+  background-repeat: no-repeat;
+  background-position: center top; 
+  background-color: black;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+}
+
+.CashCard_container{
+  width: calc(100% - 120px);
+  max-width: 1366px;
+  padding: 18px 60px;
+  position: relative;
+  height: calc(750px - 36px);
+}
+
+.CashCard_container-content{
+  max-width: 336px;
+  padding: 16px;
+  width: calc(100% - 32px);
+  position: absolute;
+  right: calc(50%);
+  transform: translate(-25%, -65%);
+  top: 50%;
+  z-index: 1;
+}
+
+.CashCard_container-content h2{
+  font-size: 40px;
+}
+
+/* Tab Responsive Cash Card Section 1024px */
+@media screen and (max-width: 1024px) {
+  .CashCard{
+    background-size: auto 600px;
+    background-position: center bottom; 
+  }
+  .CashCard_container{
+    padding: 16px;
+  }
+  .CashCard_container-content{
+    right: calc(50%);
+    top: 40px;
+    transform: translate(50%, -5%);
+    text-align: center;
+  }
+  .CashCard_container-content h2{
+    font-size: 32px;
+  }
+}
+
+/* Mobile Responsive Cash Card Section 600px */
+@media screen and (max-width: 600px) {
+  .CashCard{
+    background-size: auto 500px;
+    background-position: center bottom; 
+  }
+  .CashCard_container{
+    height: calc(700px - 36px);
+    width: calc(100% - 32px);
+    padding: 15px;
+  }
+  .CashCard_container-content{
+    transform: translate(50%, 5%);
+  }
+
+  .CashCard_container-content h2{
+    font-size: 24px;
+  }
+  .CashCard_container-content p{
+    font-size: 12px;
+  }
+}
+
+/* Investing section CSS */
+.Investing{
+  position: relative;
+  width: 100%;
+  background-image: url("../src/assets/svgs/investing/InvestingBG.svg");
+  background-repeat: no-repeat;
+  background-position: center center; 
+  background-color: #00D54B;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Investing_container{
+  width: calc(100% - 120px);
+  max-width: 1366px;
+  padding: 131px 60px 60px;
+  height: calc(550px - 120px);
+  gap: 80px;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Investing_container h2{
+  font-size: 40px;
+}
+
+.Investing_container-content{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 1100px;
+  gap: 60px;
+}
+
+.Investing_container-content h3{
+  font-size: 22px;
+}
+
+.Investing_container-stocks{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.Investing_container-bitcoin{
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 35px;
+}
+
+.Investing_container-text{
+  padding-top: 36px;
+}
+
+.Investing_footer{
+  width: calc(100% - 120px);
+  max-width: 1366px;
+  padding: 18px 60px;
+
+}
+
+/* Tab Responsive Investing section CSS 1024px*/
+@media screen and (max-width: 1024px) {
+  .Investing{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .Investing_container{
+    padding: 50px 60px 60px;
+    gap: 10px;
+    height: calc(700px - 120px);
+  }
+  .Investing_container-content{
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 1100px;
+    gap: 20px;
+  }
+  .Investing_container-stocks{
+    width: 100%;
+  }
+  .Investing_container-bitcoin{
+    width: 100%;
+  }
+  .Investing_container-stocks img{
+    width: 120px;
+  }
+  .Investing_container-bitcoin img{
+    width: 120px;
+  }
+}
+
+/* Mobile Responsive Investing section CSS 600px*/
+@media screen and (max-width: 600px) {
+  .Investing_container{
+    padding: 30px 20px;
+    width: calc(100% - 40px);
+    gap: 10px;
+    height: calc(600px - 120px);
+    margin: 0;
+  }
+  .Investing_container-stocks{
+    gap: 10px;
+  }
+  .Investing_container-stocks img{
+    width: 100px;
+  }
+  .Investing_container-bitcoin img{
+    width: 100px;
+  }
+  .Investing_container-text{
+    padding-top: 10px;
+  }
+  .Investing_container h2{
+    font-size: 24px;
+  }
+  .Investing_container h3{
+    font-size: 18px;
+  }
+  .Investing_container p{
+    font-size: 10px;
+  }
+  .Investing_footer{
+    padding: 10px 20px;
+    width: calc(100% - 40px);
+  }
+}
+
+/* Footer Section CSS */
+.footer{
   display: flex;
   align-items: center;
-  justify-content: center;
-  height: fit-content;
-  position: absolute;
-  z-index: -1;
-  right: calc(50% - 375px);
-  top: 40px;
-  padding-top: 116px;
-  overflow-x: hidden;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
 }
 
-.Payment_main-content{
-  min-width: 353px;
-  position: absolute;
-  right: calc(50% - -112px);
-  z-index: 10;
+.footer-buttons{
+  display: flex;
+  gap: 20px;
 }
 
-/* .Payment_main svg{
-  position: absolute;
-  top: 0;
-} */
+.footer-buttons button{
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+  max-width: calc(50% - 36px);
+}
+
+.footer-content p{
+  max-width: 363px;
+}
+.footer-content ul{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Tab Responsive Footer Section CSS 1024px*/
+@media screen and (max-width: 1024px) {
+  .footer{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .footer-buttons{
+    width: 100%;
+    justify-content: center;
+  }
+  .footer-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    min-width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mobile Responsive Footer Section CSS 600px*/
+@media screen and (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

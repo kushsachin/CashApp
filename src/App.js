@@ -9,6 +9,7 @@ import Payments from './Components/Payments';
 function App() {
   return (
     <div className="App">
+      {/* Section wise Components */}
       <CashAppHero/>
       <Payments/>
       <Banking/>
